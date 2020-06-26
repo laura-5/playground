@@ -6,7 +6,7 @@ class EntreprisesController < ApplicationController
   end
 
   def new
-    @entreprise = Entreprie.new
+    @entreprise = Entreprise.new
   end
 
   def create

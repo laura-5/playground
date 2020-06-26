@@ -1,0 +1,8 @@
+<%= simple_form_for @entreprise do |f| %>
+  <%= f.input :nom, :placeholder => 'Nom Entreprise', :label => false %>
+  <%= f.input :adresse, :placeholder => 'Adresse', :label => false %>
+  <%= f.input :num_siret, :placeholder => 'Num Siret', :label => false %>
+  <%= f.input :jour, :placeholder => 'Jour du cours', :label => false %>
+  <%= f.input :heure, :placeholder => 'Heure du cours', :label => false %>
+  <%= f.submit "Créer l'entreprise", class: "btn-outline-dark mt-2 btn-sm", style: "width: 100%" %>
+<% end %>
