@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Entreprise.destroy_all
+User.destroy_all
+
+user = User.create(email: "laura1@gmail.com", password: "123456")
+
+entreprise1 = Entreprise.new(nom: "Dupondland", adresse: "2 rue Paradis", jour: "lundi", heure: "18h - 19h", num_siret: "12345")
+entreprise1.user = user
+entreprise1.save
+
+entreprise2 = Entreprise.new(nom: "Pieland", adresse: "4 rue Paradis", jour: "jeudi-dimanche", heure: "14h - 20h", num_siret: "23455")
+entreprise2.user = user
+entreprise2.save
+
+activite1 = Activite.new(nom: "Danse", adresse: "2 rue Paradis", description: "cours de salsa", heure: "18h - 19h", jour: "lundi et mardi", categorie: "adultes", type_activite: "danse", prix: "20e", formule: "à la séance")
+activite1.entreprise = @entreprise
+activite1.save
