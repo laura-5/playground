@@ -2,7 +2,8 @@ class ActivitesController < ApplicationController
   before_action :set_activite, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activite = Activite.all
+    @activites = Activite.all
+    @entreprise = Entreprise.new
   end
 
   def new
@@ -10,8 +11,9 @@ class ActivitesController < ApplicationController
   end
 
   def create
+    @entreprise = Entreprise.find(params[:activite][:entreprise_id])
     @activite = Activite.new(activite_params)
-    @activite.user = current_user
+    @activite.entreprise = @entreprise
     if @activite.save
       redirect_to activite_path(@activite)
     else
@@ -23,11 +25,13 @@ class ActivitesController < ApplicationController
   end
 
   def edit
+    @activite = Activite.find(params[:id])
   end
 
   def update
+    @activite.entreprise = @entreprise
     if @activite.update(activite_params)
-      redirect_to @activite
+      redirect_to activite_path(@activite, @entreprise_id)
     else
       render :edit
     end
@@ -40,11 +44,11 @@ class ActivitesController < ApplicationController
 
   private
 
-  def set_entreprise
+  def set_activite
     @activite = Activite.find(params[:id])
   end
 
-  def entreprise_params
-    params.require(:activite).permit(:nom, :adresse, :jour, :heure, :num_siret)
+  def activite_params
+    params.require(:activite).permit(:entreprise_id, :reference, :nom, :adresse, :jour, :heure, :description, :categorie, :type_activite, :prix, :formule)
   end
 end

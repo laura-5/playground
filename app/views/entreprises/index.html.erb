@@ -1,1 +1,11 @@
 <h4>Entreprises</h4>
+
+ <% @entreprises.each do |entreprise|  %>
+    <%= entreprise.nom %>
+    <%= entreprise.jour %>
+    <%= link_to "Détail", entreprise_path(entreprise) %>
+  <% end  %>
+
+  <div>
+  <%= link_to "Retour", root_path %>
+  </div>
