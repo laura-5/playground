@@ -1,5 +1,5 @@
 <%= simple_form_for @activite do |f| %>
-  <%= f.input :entreprise_id, collection: @entreprises %>
+  <%= f.input :entreprise_id, collection: @entreprises, :label_method => :nom, :value_method => :id  %>
   <%= f.input :nom, :placeholder => 'Nom Entreprise', :label => false %>
   <%= f.input :adresse, :placeholder => 'Adresse', :label => false %>
   <%= f.input :description, :placeholder => 'Description', :label => false %>
