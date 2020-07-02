@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_210249) do
+ActiveRecord::Schema.define(version: 2020_07_02_213829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 2020_06_25_210249) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["entreprise_id"], name: "index_activites_on_entreprise_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.time "heure_debut"
+    t.time "heure_fin"
+    t.bigint "activite_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "entreprise_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activite_id"], name: "index_bookings_on_activite_id"
+    t.index ["entreprise_id"], name: "index_bookings_on_entreprise_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "entreprises", force: :cascade do |t|
@@ -67,6 +82,9 @@ ActiveRecord::Schema.define(version: 2020_06_25_210249) do
   end
 
   add_foreign_key "activites", "entreprises"
+  add_foreign_key "bookings", "activites"
+  add_foreign_key "bookings", "entreprises"
+  add_foreign_key "bookings", "users"
   add_foreign_key "entreprises", "users"
   add_foreign_key "reservations", "activites"
   add_foreign_key "reservations", "entreprises"
