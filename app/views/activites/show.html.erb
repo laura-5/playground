@@ -8,6 +8,15 @@
 <%= @activite.prix %>
 <%= @activite.formule %>
 
+<h4> Réserver votre cours </h4>
+  <%= simple_form_for([@activite, @entreprise, @reservation]) do |f| %>
+  <%= f.input :date_debut %>
+  <%= f.input :date_fin  %>
+  <%= f.input :heure_debut  %>
+  <%= f.input :heure_fin  %>
+  <%= f.submit "Réservez", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="ml-2">
     <%= link_to 'Modifier', edit_activite_path %>
   </div>
