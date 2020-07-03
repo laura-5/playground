@@ -3,7 +3,7 @@ class ActivitesController < ApplicationController
 
   def index
     @activites = Activite.all
-    @entreprise = Entreprise.new
+  #  @entreprise = Entreprise.new
   end
 
   def new
