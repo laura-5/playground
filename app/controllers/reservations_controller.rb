@@ -2,18 +2,16 @@ class ReservationsController < ApplicationController
 
 
   def create
-    @activite = Activite.find(params[:activite_id])
+    @activite = Activite.find(params[:reservation][:activite_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.activite = @activite
-    @reservation.entreprise = @entreprise
     @reservation.user = current_user
-    @reservation.save
-
-    if @reservation.save
-      redirect_to activites_path(@activite)
+    if @activite.save
+      redirect_to activite_path(@activite)
     else
       render "activite/show"
     end
+
   end
 
 private
