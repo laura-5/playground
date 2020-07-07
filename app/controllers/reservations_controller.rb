@@ -1,8 +1,7 @@
 class ReservationsController < ApplicationController
 
-
   def create
-    @activite = Activite.find(params[:reservation][:activite_id])
+    @activite = Activite.find(params[:activite_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.activite = @activite
     @reservation.user = current_user
