@@ -3,7 +3,7 @@ class ActivitesController < ApplicationController
 
   def index
     @activites = Activite.all
-  #  @entreprise = Entreprise.new
+  # @entreprise = Entreprise.new
   end
 
   def new
@@ -23,6 +23,14 @@ class ActivitesController < ApplicationController
 
   def show
     @reservation = Reservation.new()
+
+    @activites = Activite.geocoded
+    @markers = @activites.map do |activite|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def edit

@@ -4,9 +4,9 @@ class ReservationsController < ApplicationController
     @activite = Activite.find(params[:activite_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.activite = @activite
-    @reservation.user = current_user
+    # @reservation.user = current_user
     if @activite.save
-      redirect_to activite_path(@activite)
+      redirect_to activites_path(@activite)
     else
       render "activite/show"
     end
