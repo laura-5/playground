@@ -8,6 +8,11 @@
 <%= @activite.prix %>
 <%= @activite.formule %>
 
+  <div id="map"
+  style="width: 100%; height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <h4> Réserver votre cours </h4>
   <%= simple_form_for([@activite, @reservation]) do |f| %>
   <%= f.input :activite_id %>
@@ -17,11 +22,6 @@
   <%= f.input :heure_fin  %>
   <%= f.submit "Réservez", class: "btn btn-primary" %>
   <% end %>
-
-  <div id="map"
-  style="width: 100%; height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <div class="ml-2">
     <%= link_to 'Modifier', edit_activite_path %>
