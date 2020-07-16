@@ -27,8 +27,8 @@ class ActivitesController < ApplicationController
     @activites = Activite.geocoded
     @markers = @activites.map do |activite|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: activite.latitude,
+        lng: activite.longitude
       }
     end
   end
