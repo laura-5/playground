@@ -8,6 +8,7 @@ class ActivitesController < ApplicationController
 
   def new
     @activite = Activite.new
+    @entreprises = Entreprise.all
   end
 
   def create
