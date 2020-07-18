@@ -5,11 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "starting to seed"
 
+Activite.destroy_all
 Entreprise.destroy_all
 User.destroy_all
 
-user = User.create(email: "laura1@gmail.com", password: "123456")
+user = User.new(email: "laura1@gmail.com", password: "123456")
+
+puts "Creating entreprises"
 
 entreprise1 = Entreprise.new(nom: "Dupondland", adresse: "2 rue Paradis", jour: "lundi", heure: "18h - 19h", num_siret: "12345")
 entreprise1.user = user
@@ -19,6 +23,10 @@ entreprise2 = Entreprise.new(nom: "Pieland", adresse: "4 rue Paradis", jour: "je
 entreprise2.user = user
 entreprise2.save
 
-activite1 = Activite.new(nom: "Danse", adresse: "2 rue Paradis", description: "cours de salsa", heure: "18h - 19h", jour: "lundi et mardi", categorie: "adultes", type_activite: "danse", prix: "20e", formule: "à la séance")
-activite1.entreprise = @entreprise
+puts "Creating activites"
+
+activite1 = Activite.new(nom: "Danse", address: "2 rue Paradis", description: "cours de salsa", heure: "18h - 19h", jour: "lundi et mardi", categorie: "adultes", type_activite: "danse", prix: "20e", formule: "à la séance")
+activite1.entreprise = @entreprise1
 activite1.save
+
+puts "finished seed"
