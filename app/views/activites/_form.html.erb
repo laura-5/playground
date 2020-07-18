@@ -1,5 +1,6 @@
 <%= simple_form_for @activite do |f| %>
   <%= f.input :entreprise_id, collection: @entreprises, :label_method => :nom,:value_method => :id, :prompt => "Entreprise", :label => false %>
+  <%= f.input :nom, :placeholder => 'Nom', :label => false %>
   <%= f.input :address, :placeholder => 'Adresse', :label => false %>
   <%= f.input :description, :placeholder => 'Description', :label => false %>
   <%= f.input :jour, :placeholder => 'Jour du cours', :label => false %>
