@@ -1,6 +1,14 @@
 <h1>Entre dans le Playground</h1>
 <p>Découvre vite de nvelles activités!</p>
 
+<%= form_tag activites_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Rechercher une activité"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <%= link_to "Entreprises", entreprises_path(@entreprise) %>
 <%= link_to "Activités", activites_path(@activite) %>

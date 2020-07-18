@@ -4,6 +4,11 @@ class ActivitesController < ApplicationController
   def index
     @activites = Activite.all
   # @entreprise = Entreprise.new
+    if params[:query].present?
+      @activites = Activite.where("nom ILIKE ?", "%#{params[:query]}%")
+    else
+      @activites = Activite.all
+    end
   end
 
   def new
