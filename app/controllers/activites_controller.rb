@@ -24,6 +24,7 @@ class ActivitesController < ApplicationController
   def show
     @reservation = Reservation.new()
 
+    @activites = Activite.where.not(latitude: nil, longitude: nil)
     @activites = Activite.geocoded
     @markers = @activites.map do |activite|
       {
@@ -59,6 +60,6 @@ class ActivitesController < ApplicationController
   end
 
   def activite_params
-    params.require(:activite).permit(:entreprise_id, :reference, :nom, :adresse, :jour, :heure, :description, :categorie, :type_activite, :prix, :formule)
+    params.require(:activite).permit(:entreprise_id, :reference, :nom, :address, :jour, :heure, :description, :categorie, :type_activite, :prix, :formule, :latitude, :longitude)
   end
 end
