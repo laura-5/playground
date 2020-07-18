@@ -1,7 +1,8 @@
 <h4>Activites</h4>
 
  <% @activites.each do |activite|  %>
-    <%= activite.nom %>
+    <%= activite.entreprise.nom %>
+    <%= activite.description %>
     <%= activite.jour %>
     <%= link_to "Détail", activite_path(activite) %>
   <% end  %>
