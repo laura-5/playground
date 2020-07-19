@@ -4,6 +4,16 @@ class ActivitesController < ApplicationController
   def index
     @activites = Activite.all
   # @entreprise = Entreprise.new
+    @activites = Activite.where.not(latitude: nil, longitude: nil)
+    @activites = Activite.geocoded
+    @markers = @activites.map do |activite|
+      {
+      lat: activite.latitude,
+      lng: activite.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { activite: activite })
+    }
+    end
+
     if params[:query].present?
       @activites = Activite.where("nom ILIKE ?", "%#{params[:query]}%")
     else
@@ -29,16 +39,6 @@ class ActivitesController < ApplicationController
 
   def show
     @reservation = Reservation.new()
-
-    @activites = Activite.where.not(latitude: nil, longitude: nil)
-    @activites = Activite.geocoded
-    @markers = @activites.map do |activite|
-      {
-      lat: activite.latitude,
-      lng: activite.longitude,
-      infoWindow: render_to_string(partial: "info_window", locals: { activite: activite })
-    }
-    end
   end
 
   def edit
