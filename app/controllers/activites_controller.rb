@@ -13,6 +13,12 @@ class ActivitesController < ApplicationController
       infoWindow: render_to_string(partial: "info_window", locals: { activite: activite })
     }
     end
+
+    if params[:query].present?
+      @activites = Activite.where("nom ILIKE ?", "%#{params[:query]}%")
+    else
+      @activites = Activite.all
+    end
   end
 
   def new
