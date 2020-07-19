@@ -1,5 +1,14 @@
 <h4>Activites</h4>
 
+ <%= form_tag activites_path, method: :get do %>
+      <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+             placeholder: "Trouver une activité"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
   <div>
     <p class="adresse"><i class="fas fa-map-marked-alt p-1"></i>Se situe</p>
   <div id="map" style="width: 100%; height: 300px;"
