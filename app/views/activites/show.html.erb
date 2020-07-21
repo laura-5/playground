@@ -10,7 +10,6 @@ jour:<%= @activite.jour %>
 
 <h4> Réserver votre cours </h4>
   <%= simple_form_for([@activite, @reservation]) do |f| %>
-  <%= f.input :activite_id %>
   <%= f.input :date_debut %>
   <%= f.input :date_fin  %>
   <%= f.input :heure_debut  %>

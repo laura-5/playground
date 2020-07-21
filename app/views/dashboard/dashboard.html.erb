@@ -1,0 +1,10 @@
+<h4>Mes réservations</h4>
+  <% @reservations.each do |reservation| %>
+    <p><%= reservation.activite.nom %></p>
+    <p><%= reservation.activite.description %></p>
+    <p><%= reservation.activite.address %></p>
+    <p><%= reservation.date_debut %></p>
+    <p><%= reservation.date_fin %></p>
+    <p><%= reservation.heure_debut %></p>
+    <p><%= reservation.heure_fin %></p>
+<% end %>

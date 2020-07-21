@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :activites do
       resources :reservations, only: [ :create ]
     end
+    get '/dashboard', to:'dashboard#dashboard'
 end
