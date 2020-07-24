@@ -2,20 +2,12 @@
   <%= video_tag "succes_video.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
 </div>
 
-<div class="banner-content">
-  <h1>Playground</h1>
-  <p>Tes activités à proximité!</p>
+  <div class="banner-content">
+    <h1>Playground</h1>
+    <p>Tes activités à proximité!</p>
 
-  <%= form_tag activites_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Rechercher une activité"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+    <%= link_to "Activités", activites_path(@activite) %>
 
-  <%= link_to "Entreprises", entreprises_path(@entreprise) %>
-  <%= link_to "Activités", activites_path(@activite) %>
+    <%= link_to "Entreprises", entreprises_path(@entreprise) %>
 
-</div>
+  </div>
