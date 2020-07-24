@@ -10,6 +10,7 @@
     <%= f.input :categorie, :placeholder => 'Catégorie', :label => false %>
     <%= f.input :prix, :placeholder => 'Prix', :label => false %>
     <%= f.input :formule, :placeholder => 'Formule', :label => false %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, :label => false %>
     <%= f.submit "Valider", class: "btn-outline-dark mt-2 btn-sm", style: "width: 100%" %>
   <% end %>
 </div>
