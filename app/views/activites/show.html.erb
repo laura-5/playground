@@ -1,5 +1,11 @@
-
 <div class="container">
+
+  <% if @activite.photos != [] %>
+    <% @activite.photos.each do |photo| %>
+    <p><%= cl_image_tag photo.key, height: 300, width: 340, crop: :fill %></p>
+    <% end %>
+  <% end %>
+
   <%= @activite.nom %>
   <%= @activite.heure %>
   description: <%= @activite.description %>

@@ -67,6 +67,6 @@ class ActivitesController < ApplicationController
   end
 
   def activite_params
-    params.require(:activite).permit(:entreprise_id, :reference, :nom, :address, :jour, :heure, :description, :categorie, :type_activite, :prix, :formule, :latitude, :longitude)
+    params.require(:activite).permit(:entreprise_id, :reference, :nom, :address, :jour, :heure, :description, :categorie, :type_activite, :prix, :formule, :latitude, :longitude, photos: [])
   end
 end
