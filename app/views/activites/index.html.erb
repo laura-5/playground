@@ -1,21 +1,20 @@
-<h4>Activites</h4>
+<div class="container">
+  <h4>Activites</h4>
 
- <%= form_tag activites_path, method: :get do %>
+  <div class="mb-2">
+    <%= form_tag activites_path, method: :get do %>
       <%= text_field_tag :query,
-                          params[:query],
-                          class: "form-control",
-             placeholder: "Trouver une activité"
+        params[:query],
+          placeholder: "Trouver une activité"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "" %>
     <% end %>
+  </div>
 
-  <div>
-    <p class="adresse"><i class="fas fa-map-marked-alt p-1"></i>Se situe</p>
   <div id="map" style="width: 100%; height: 300px;"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
     data-markers = "<%= @markers.to_json %>"
      ></div>
-  </div>
 
  <% @activites.each do |activite|  %>
     <%= activite.entreprise.nom %>
@@ -31,3 +30,4 @@
   <div>
   <%= link_to "Retour", root_path %>
   </div>
+</div>
