@@ -2,13 +2,13 @@
   <h4>Activites</h4>
 
   <div class="mb-2">
-    <%= form_tag activites_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-          placeholder: "Trouver une activité"
-      %>
-      <%= submit_tag "Search", class: "" %>
-    <% end %>
+      <%= form_tag activites_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+            placeholder: "Trouver une activité"
+        %>
+        <%= submit_tag "Search", class: "" %>
+      <% end %>
   </div>
 
   <div id="map" style="width: 100%; height: 300px;"
