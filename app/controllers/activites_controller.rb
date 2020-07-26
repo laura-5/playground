@@ -2,7 +2,7 @@ class ActivitesController < ApplicationController
   before_action :set_activite, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activites = Activite.all
+    @activites = Activite.all.last(3)
   # @entreprise = Entreprise.new
     @activites = Activite.where.not(latitude: nil, longitude: nil)
     @activites = Activite.geocoded
@@ -18,7 +18,7 @@ class ActivitesController < ApplicationController
       @activites = Activite.where("address ILIKE ?", "%#{params[:query]}%")
       @activites = Activite.where("nom ILIKE ?", "%#{params[:query]}%")
     else
-      @activites = Activite.all
+      @activites = Activite.all.last(3)
     end
   end
 

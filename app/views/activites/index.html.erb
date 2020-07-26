@@ -16,12 +16,22 @@
     data-markers = "<%= @markers.to_json %>"
      ></div>
 
- <% @activites.each do |activite|  %>
-    <%= activite.entreprise.nom %>
-    <%= activite.description %>
-    <%= activite.jour %>
+  <h4>Les nouvelles activités à découvrir</h4>
+
+
+  <div class="d-flex">
+      <% @activites.each do |activite|  %>
+        <% activite.photos.each do |photo| %>
+          <p><%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %></p>
+        <% end %>
+
+  <div>
+    <div><%= activite.entreprise.nom %></div>
+    <div><%= activite.nom %></div>
     <%= link_to "Détail", activite_path(activite) %>
-  <% end  %>
+  </div>
+      <% end %>
+  </div>
 
   <div>
     <%= link_to "Ajouter une activité", new_activite_path %>
