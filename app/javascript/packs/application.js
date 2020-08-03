@@ -28,6 +28,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
+import "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
 

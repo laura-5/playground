@@ -16,14 +16,25 @@
   <%= @activite.prix %>
   <%= @activite.formule %>
 
-<h4> Réserver votre cours </h4>
-  <%= simple_form_for([@activite, @reservation]) do |f| %>
-  <%= f.input :date_debut %>
-  <%= f.input :date_fin  %>
-  <%= f.input :heure_debut  %>
-  <%= f.input :heure_fin  %>
-  <%= f.submit "Réservez", class: "btn btn-primary" %>
-  <% end %>
+
+<div class="container">
+  <div class="form-wrapper">
+    <h4> Réserver votre cours </h4>
+      <%= simple_form_for([@activite, @reservation]) do |f| %>
+      <%= f.input :date_debut, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
+      <%= f.input :date_fin, label: false,  as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
+      <%= f.input :heure_debut  %>
+      <%= f.input :heure_fin  %>
+      <%= f.submit "Réservez", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
+
+  <div
+  id="reservation-form-div"
+  data-reservations="<%= @reservations_dates.to_json %>"
+>
+
 
   <div class="ml-2">
     <%= link_to 'Modifier', edit_activite_path %>
