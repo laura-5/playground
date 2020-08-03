@@ -40,6 +40,15 @@ class ActivitesController < ApplicationController
 
   def show
     @reservation = Reservation.new()
+
+    @activite = Activite.find(params[:id])
+    @reservations = Reservation.where(activite_id: @activite.id)
+    @reservations_dates = @reservations.map do |reservation|
+      {
+        from: reservation.date_debut,
+        to:   reservation.date_fin
+      }
+    end
   end
 
   def edit
