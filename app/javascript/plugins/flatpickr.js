@@ -10,7 +10,23 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
     plugins: [new rangePlugin({ input: "#range_end"})],
     minDate: "today",
     inline: true,
-    dateFormat: "d-m-Y",
+    altInput: true,
+    altFormat: "F j, Y",
+    enableTime: true,
+    dateFormat: "d-m-Y h:i",
     "disable": reservations,
+  })
+}
+
+ const activiteForm = document.getElementById('activite-form-div');
+
+ if (activiteForm) {
+  const activites = JSON.parse(activiteForm.dataset.activites);
+  flatpickr("#range_start", {
+    plugins: [new rangePlugin({ input: "#range_end"})],
+    minDate: "today",
+    inline: true,
+    dateFormat: "Y-m-d",
+    "disable": activites,
   })
 }
