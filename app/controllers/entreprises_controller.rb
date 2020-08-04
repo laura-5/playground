@@ -52,6 +52,6 @@ class EntreprisesController < ApplicationController
   end
 
   def entreprise_params
-    params.require(:entreprise).permit(:nom, :adresse, :jour, :heure, :num_siret)
+    params.require(:entreprise).permit(:nom, :adresse, :jour_debut, :jour_fin, :heure, :num_siret)
   end
 end
