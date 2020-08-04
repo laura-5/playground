@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_24_195023) do
+ActiveRecord::Schema.define(version: 2020_08_04_182416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,20 +51,19 @@ ActiveRecord::Schema.define(version: 2020_07_24_195023) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
-    t.bigint "user_id"
     t.index ["entreprise_id"], name: "index_activites_on_entreprise_id"
-    t.index ["user_id"], name: "index_activites_on_user_id"
   end
 
   create_table "entreprises", force: :cascade do |t|
     t.string "nom"
     t.string "adresse"
-    t.string "jour"
+    t.date "jour_debut"
     t.string "heure"
     t.integer "num_siret"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "jour_fin"
     t.index ["user_id"], name: "index_entreprises_on_user_id"
   end
 
@@ -98,7 +97,6 @@ ActiveRecord::Schema.define(version: 2020_07_24_195023) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activites", "entreprises"
-  add_foreign_key "activites", "users"
   add_foreign_key "entreprises", "users"
   add_foreign_key "reservations", "activites"
   add_foreign_key "reservations", "users"
