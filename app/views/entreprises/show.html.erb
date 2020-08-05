@@ -1,19 +1,8 @@
 Nom de l'entreprise<%= @entreprise.nom %>
 
-<div class="container">
-  <div class="form-wrapper">
-    <%= simple_form_for(@entreprise) do |f| %>
-    <%= f.input :jour_debut, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
-    <%= f.input :jour_fin, label: false,  as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
-    <%= f.submit "Enregistrez", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
-
-<div
-  id="activite-form-div"
-  data-activites="<%= @activites_dates.to_json %>"
->
+<% @entreprise.activite.each do |activite| %>
+<%= activite.nom %>
+<% end %>
 
 
 <div class="d-flex">

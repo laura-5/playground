@@ -21,12 +21,6 @@ class EntreprisesController < ApplicationController
 
   def show
     @activites = Activite.where(entreprise_id: @entreprise.id)
-    @activites_dates = @activites.map do |activite|
-      {
-        from: activite.jour_debut,
-        to:   activite.jour_fin
-        }
-      end
   end
 
   def edit
