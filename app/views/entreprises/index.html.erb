@@ -3,7 +3,7 @@
  <% @entreprises.each do |entreprise|  %>
     <%= entreprise.nom %>
     <%= entreprise.jour_debut %>
-    <%= entreprise.jour_fin %>
+
     <%= link_to "Détail", entreprise_path(entreprise) %>
   <% end  %>
 
