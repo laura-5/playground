@@ -21,12 +21,6 @@ class EntreprisesController < ApplicationController
 
   def show
     @activites = Activite.where(entreprise_id: @entreprise.id)
-    @activites_dates = @activites.map do |activite|
-      {
-        from: activite.jour_debut,
-        to:   activite.jour_fin
-        }
-      end
   end
 
   def edit
@@ -52,6 +46,6 @@ class EntreprisesController < ApplicationController
   end
 
   def entreprise_params
-    params.require(:entreprise).permit(:nom, :adresse, :jour_debut, :jour_fin, :heure, :num_siret)
+    params.require(:entreprise).permit(:nom, :adresse, :heure, :num_siret)
   end
 end
