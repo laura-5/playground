@@ -1,10 +1,18 @@
-<h4>Mes réservations</h4>
-  <% @reservations.each do |reservation| %>
-    <p><%= reservation.activite.nom %></p>
-    <p><%= reservation.activite.description %></p>
-    <p><%= reservation.activite.address %></p>
-    <p><%= reservation.date_debut %></p>
-    <p><%= reservation.date_fin %></p>
-    <p><%= reservation.heure_debut %></p>
-    <p><%= reservation.heure_fin %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h4>Mes réservations</h4>
+        <% @reservations.each do |reservation| %>
+        <div class="card-activite">
+          <div><%= reservation.activite.nom %></div>
+          <div><%= reservation.activite.description %></div>
+          <div><%= reservation.activite.address %></div>
+          <div><%= reservation.date_debut %></div>
+          <div><%= reservation.date_fin %></div>
+          <div><%= reservation.heure_debut %></div>
+          <div><%= reservation.heure_fin %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
