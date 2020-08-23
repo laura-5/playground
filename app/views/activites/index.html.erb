@@ -1,24 +1,28 @@
+Index
+
 <div class="spaces-containers container">
 
   <div class="row">
     <div class="col-lg-12">
-      <h4>Toutes les activites autour de vous ! </h4>
 
-      <div>
-        <div id="map" style="width: 100%; height: 300px;"
+      <div class="d-flex maps-card">
+        <div class="d-block">
+          <h4 class="ml-4 mt-5">Découvrez toutes les activites autour de vous ! </h4>
+          <div class="ml-4 mt-5">
+            <%= form_tag activites_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                  placeholder: " Trouver une activité"
+              %>
+              <%= submit_tag "Rechercher", class: "" %>
+            <% end %>
+          </div>
+
+        </div>
+        <div class="ml-3" id="map" style="width: 40%; height: 300px;"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
           data-markers = "<%= @markers.to_json %>"
         ></div>
-      </div>
-
-           <div class="mb-2">
-        <%= form_tag activites_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-              placeholder: " Trouver une activité"
-          %>
-          <%= submit_tag "Rechercher", class: "" %>
-        <% end %>
       </div>
 
       <div class="mb-2 mt-2">
@@ -38,7 +42,6 @@
             <div class="d-block">
             <div><%= activite.entreprise.nom %></div>
             <div><%= activite.nom %></div>
-            <div><%= activite.address %></div>
             <div><%= link_to "Détail", activite_path(activite) %></div>
             </div>
             </div>
