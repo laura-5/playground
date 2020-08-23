@@ -1,15 +1,13 @@
-<div class="container">
+<div class="container spaces-containers">
   <div class="row">
     <div class="col-lg-12">
 
       <div class="d-flex">
-        <div>
           <% if @activite.photos != [] %>
             <% @activite.photos.each do |photo| %>
             <p><%= cl_image_tag photo.key, height: 300, width: 340, crop: :fill %></p>
             <% end %>
           <% end %>
-        </div>
 
         <div class="ml-2">
           <div>Activité:<%= @activite.nom %></div>
