@@ -1,13 +1,16 @@
 .card-activite {
-
-margin-bottom: 4px;
 background: white;                         /* White background */                           /* Internal space */
-border-radius: 4px;                        /* Small radius */
-box-shadow: 0 10px 30px rgba(0,0,0,.1);    /* Light shadow */
+border-radius: 8px;                        /* Small radius */
+box-shadow: 0 10px 30px rgba(0,0,0,.1);
+width: 150px;
 }
 
 
 .maps-card {
   background-color: whitesmoke;
   justify-content: space-between;
+}
+
+.nom-entreprise {
+  color: #FF8A65;
 }
