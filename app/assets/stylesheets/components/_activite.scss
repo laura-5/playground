@@ -5,7 +5,6 @@ box-shadow: 0 10px 30px rgba(0,0,0,.1);
 width: 210px;
 }
 
-
 .maps-card {
   background-color: whitesmoke;
   justify-content: space-between;
@@ -18,4 +17,16 @@ width: 210px;
 .button {
   color: white;
   background-color: #FF8A65;
+}
+
+.titre-activites {
+  margin-top: 96px;
+}
+
+.card-resa {
+background: white;                         /* White background */                           /* Internal space */
+border-radius: 8px;                        /* Small radius */
+box-shadow: 0 10px 30px rgba(0,0,0,.1);
+width: 100%;
+margin-bottom: 20px;
 }
