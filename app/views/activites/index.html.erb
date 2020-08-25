@@ -9,7 +9,7 @@
             params[:query],
               placeholder: " Trouver une activité"
           %>
-          <%= submit_tag "Rechercher", class: "" %>
+          <%= submit_tag "Rechercher", class: "button" %>
         <% end %>
       </div>
 
@@ -29,7 +29,7 @@
 
         <div class="card-activite">
           <% activite.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %>
+            <%= cl_image_tag photo.key, height: 150, width: 210, crop: :fill %>
           <% end %>
 
           <div class="ml-2">
