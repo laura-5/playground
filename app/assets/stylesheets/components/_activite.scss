@@ -2,7 +2,7 @@
 background: white;                         /* White background */                           /* Internal space */
 border-radius: 8px;                        /* Small radius */
 box-shadow: 0 10px 30px rgba(0,0,0,.1);
-width: 150px;
+width: 210px;
 }
 
 
@@ -13,4 +13,9 @@ width: 150px;
 
 .nom-entreprise {
   color: #FF8A65;
+}
+
+.button {
+  color: white;
+  background-color: #FF8A65;
 }
