@@ -7,3 +7,10 @@
   right: 0;
   margin-top: 200px;
 }
+
+.banner-content-activites {
+  position: relative;
+  background-image: image-url("gens.png");
+  height: calc( 100vh - 37px - 37px );
+  background-size: cover;
+}
