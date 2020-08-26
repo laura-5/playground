@@ -1,26 +1,25 @@
 
-  <div class="d-flex maps-card mt-5">
-    <div class="d-block">
-      <h4 class="ml-4 titre-activites">Découvrez toutes les activites autour de vous ! </h4>
-      <div class="ml-4 mt-5">
-        <%= form_tag activites_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-              placeholder: " Trouver une activité"
-          %>
-          <%= submit_tag "Rechercher", class: "button" %>
-        <% end %>
-      </div>
-
+<div class="banner-content-activites">
+    <div class="ml-4 pt-5 titre-activites">Découvrez toutes les activites autour de vous ! </div>
+    <div class="ml-4 mt-5">
+      <%= form_tag activites_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+            placeholder: " Trouver une activité"
+        %>
+        <%= submit_tag "Rechercher", class: "button" %>
+      <% end %>
     </div>
-    <div class="ml-3" id="map" style="width: 50%; height: 550px;"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-      data-markers = "<%= @markers.to_json %>"
-    ></div>
-  </div>
+</div>
+
+
 
 <div class="spaces-containers container">
 
+<div class="ml-3" id="map" style="width: 300px; height: 300px;"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+      data-markers = "<%= @markers.to_json %>"
+    ></div>
 
   <div class="mb-2 mt-2">
     <h4>Nouvelles activités à découvrir</h4>
