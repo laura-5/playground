@@ -1,38 +1,43 @@
-.card-activite {
-background: white;                         /* White background */                           /* Internal space */
-border-radius: 8px;                        /* Small radius */
-box-shadow: 0 10px 30px rgba(0,0,0,.1);
-width: 210px;
-}
-
-.maps-card {
-  background-color: whitesmoke;
-  justify-content: space-between;
-}
-
 .nom-entreprise {
   color: #FF8A65;
 }
 
 .button {
   color: black;
-  background-color: #F6B969;
+  background-color: #fdd68b;
 }
 
 .titre-activites {
   margin-top: 56px;
   font-size: 24px;
   color: white;
+  margin-left: 40px;
+}
+
+.titre-selection-activites {
+  font-size: 24px;
+  color: black;
+}
+
+.card-activite {                       /* Internal space */
+  border-radius: 8px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 210px;
+}
+
+.champ-recherche {
+  margin-left: 40px;
 }
 
 .card-resa {
-background: white;                         /* White background */                           /* Internal space */
-border-radius: 8px;                        /* Small radius */
-box-shadow: 0 10px 30px rgba(0,0,0,.1);
-width: 100%;
-margin-bottom: 20px;
+  background: white;                         /* White background */                           /* Internal space */
+  border-radius: 8px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 #map {
   margin-top: 96px;
+  box-shadow: 0 10px 20px rgb(242, 209, 100);
 }
