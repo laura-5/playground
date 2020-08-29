@@ -1,4 +1,3 @@
-
 <div class="banner-content-activites">
 
   <div class="d-flex justify-content-around">
@@ -25,11 +24,13 @@
 </div>
 
 
-<div class="container">
+<div class="container container-cards">
 
-  <div class="mt-2 mb-2 titre-selection-activites">Sélection d'activités</div>
+  <div class="mt-2 mb-2">
+    <h4>Nouvelles activités à découvrir</h4>
+  </div>
 
-  <div class="d-flex justify-content-between">
+ <div class="d-flex justify-content-between">
     <% @activites.each do |activite|  %>
 
     <div class="card card-activite" style="width: 18rem;">
@@ -48,4 +49,3 @@
     </div>
         <% end %>
   </div>
-
