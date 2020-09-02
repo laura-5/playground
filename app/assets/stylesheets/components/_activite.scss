@@ -1,5 +1,6 @@
 .nom-entreprise {
-  color: #FF8A65;
+  color: #fdd68b;
+  font-weight: bold;
 }
 
 .button {
@@ -40,4 +41,9 @@
 #map {
   margin-top: 96px;
   box-shadow: 0 10px 20px rgb(242, 209, 100);
+}
+
+.card-activite-details {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
