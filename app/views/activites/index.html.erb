@@ -1,3 +1,4 @@
+Index
 <div class="banner-content-activites">
 
   <div class="d-flex justify-content-around">
@@ -34,11 +35,9 @@
     <% @activites.each do |activite|  %>
 
     <div class="card card-activite" style="width: 18rem;">
-      <div class="card-img-top">
         <% activite.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 180, width: 286, crop: :fill %>
         <% end %>
-      </div>
 
       <div class="ml-2 card-body">
         <div class="card-title nom-entreprise"><%= activite.entreprise.nom %></div>
