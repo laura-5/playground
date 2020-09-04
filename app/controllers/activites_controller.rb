@@ -15,8 +15,7 @@ class ActivitesController < ApplicationController
     end
 
     if params[:query].present?
-      @activites = Activite.where("address ILIKE ?", "%#{params[:query]}%")
-      @activites = Activite.where("nom ILIKE ?", "%#{params[:query]}%")
+      @activites = Activite.where("address ILIKE ?", "%#{params[:query]}%").or(Activite.where("nom ILIKE ?", "%#{params[:query]}%"))
     else
       @activites = Activite.all.last(3)
     end
