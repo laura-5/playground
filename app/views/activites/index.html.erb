@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <div class="ml-3 rounded-circle" id="map" style="width: 220px; height: 220px;"
+        <div class="ml-3" id="map" style="width: 220px; height: 200px;"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
           data-markers = "<%= @markers.to_json %>"
         ></div>

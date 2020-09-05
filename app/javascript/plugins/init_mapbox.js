@@ -29,12 +29,16 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-left');
+    map.addControl(new mapboxgl.FullscreenControl());
     map.addControl(
       new mapboxgl.GeolocateControl({
         positionOptions: {
@@ -42,6 +46,7 @@ const initMapbox = () => {
         },
         trackUserLocation: true
         })
+
       );
   }
 };
