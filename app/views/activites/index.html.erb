@@ -3,7 +3,7 @@
   <div>
     <div class="banner-content-activites">
 
-      <div class="d-flex justify-content-around">
+
         <div>
           <div class="pt-5 titre-activites">Découvrez toutes les activites autour de vous ! </div>
 
@@ -18,11 +18,8 @@
           </div>
         </div>
 
-        <div class="ml-3" id="map" style="width: 220px; height: 200px;"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-          data-markers = "<%= @markers.to_json %>"
-        ></div>
-      </div>
+
+
 
     </div>
   </div>
@@ -32,7 +29,7 @@
 
   <div class="new-acti">Nouvelles activités</div>
 
-    <div class="thecards">
+       <div class="thecards">
 
       <% @activites.each do |activite|  %>
 
@@ -42,17 +39,34 @@
           <%= cl_image_tag photo.key, class: "card" %>
           <% end %>
 
-        <div class="container-card-activite pt-5">
-          <div style="color: white"><%= activite.entreprise.nom %></div>
-            <%= link_to activite_path(activite) do %>
-              <div style="color: white"><%= activite.nom %></div>
-            <% end %>
-        </div>
+          <div class="container-card-activite pt-5">
+            <div style="color: white"><%= activite.entreprise.nom %></div>
+              <%= link_to activite_path(activite) do %>
+                <div style="color: white"><%= activite.nom %></div>
+              <% end %>
+          </div>
 
-    </div>
+        </div>
       <% end %>
 
   </div>
+
+
+  <div class="new-acti border-bottom">Rechercher une activité à proximité</div>
+
+
+
+  <div class="container">
+
+    <div id="map" style="width: 100%; height: 490px;"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+      data-markers = "<%= @markers.to_json %>"
+    ></div>
+  </div>
+
+
+    <div class="container-cards"></div>
+
 </div>
 
 
