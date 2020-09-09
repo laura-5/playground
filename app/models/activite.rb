@@ -5,4 +5,5 @@ class Activite < ApplicationRecord
 
   belongs_to :entreprise
   has_many :reservation
+  has_many :reviews, dependent: :destroy
 end
