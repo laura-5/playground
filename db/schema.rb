@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_08_04_182416) do
   create_table "entreprises", force: :cascade do |t|
     t.string "nom"
     t.string "adresse"
-    t.date "jour_debut"
+    t.string "jour_debut"
     t.string "heure"
     t.integer "num_siret"
     t.bigint "user_id", null: false

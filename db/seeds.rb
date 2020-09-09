@@ -15,11 +15,11 @@ user = User.new(email: "laura1@gmail.com", password: "123456")
 
 puts "Creating entreprises"
 
-entreprise1 = Entreprise.new(nom: "Dupondland", adresse: "2 rue Paradis", jour: "lundi", heure: "18h - 19h", num_siret: "12345")
+entreprise1 = Entreprise.new(nom: "Dupondland", adresse: "2 rue Paradis", jour_debut: "lundi", heure: "18h - 19h", num_siret: "12345")
 entreprise1.user = user
 entreprise1.save
 
-entreprise2 = Entreprise.new(nom: "Pieland", adresse: "4 rue Paradis", jour: "jeudi-dimanche", heure: "14h - 20h", num_siret: "23455")
+entreprise2 = Entreprise.new(nom: "Pieland", adresse: "4 rue Paradis", jour_debut: "jeudi", heure: "14h - 20h", num_siret: "23455")
 entreprise2.user = user
 entreprise2.save
 
