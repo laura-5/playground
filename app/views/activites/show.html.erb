@@ -11,7 +11,7 @@
 
           <% if @activite.photos != [] %>
             <% @activite.photos.each do |photo| %>
-            <p><%= cl_image_tag photo.key, height: 240, width: 320, crop: :fill %></p>
+            <p><%= cl_image_tag photo.key, height: 240, width: 308, crop: :fill, class: "img-acti" %></p>
             <% end %>
           <% end %>
 
@@ -23,9 +23,12 @@
           <div><%= @activite.type_activite %></div>
           <div>Prix: <%= @activite.prix %> euros</div>
           <div><%= @activite.formule %></div>
+          <%= link_to 'Laisser un avis', new_activite_review_path(@activite) %>
         </div>
 
     </div>
+
+  <div class="d-flex justify-content-between">
 
       <div class="form-wrapper">
           <%= simple_form_for([@activite, @reservation]) do |f| %>
@@ -34,6 +37,21 @@
           <%= f.submit "Réservez", class: "btn btn-primary" %>
           <% end %>
       </div>
+
+      <div class="ml-5 commentaire card-activite-sw pl-4 pt-3">
+        <h4>Les avis</h4>
+        <% @activite.reviews.each do |review| %>
+          <div><%= review.content %></div>
+          <div><%= review.stars %></div>
+                <%= link_to "Supprimer",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Etes-vous sûre?" } %>
+          <div class="border-bottom"></div>
+          <% end %>
+      </div>
+
+  </div>
 
       <div
       id="reservation-form-div"
