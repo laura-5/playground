@@ -7,13 +7,17 @@
         <% @reservations.each do |reservation| %>
         <div class="card-resa">
           <div class="d-flex">
-            <div class="mr-1"><%= reservation.activite.nom %></div>
+
+              <%= link_to activites_path(@activite) do %>
+                <div class="mr-1"><%= reservation.activite.nom %></div>
+              <% end %>
+
+
             <div>- <%= reservation.activite.entreprise.nom %></div>
           </div>
           <div><%= reservation.activite.description %></div>
           <div><%= reservation.activite.address %></div>
-          <div><%= reservation.date_debut %></div>
-          <div><%= reservation.date_fin %></div>
+          <div>Du <%= reservation.date_debut %> Au <%= reservation.date_fin %></div>
           <div><%= reservation.heure_debut %></div>
           <div><%= reservation.heure_fin %></div>
         </div>
