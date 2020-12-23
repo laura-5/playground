@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_190245) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "jour_fin"
     t.index ["user_id"], name: "index_entreprises_on_user_id"
   end
 
