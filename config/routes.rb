@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :entreprises
     resources :activites do
       resources :reservations, only: [ :create ]
+      resources :reviews, only: [ :new, :create ]
     end
+      resources :reviews, only: [ :destroy ]
     get '/dashboard', to:'dashboard#dashboard'
 end
