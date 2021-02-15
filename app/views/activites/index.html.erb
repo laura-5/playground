@@ -40,11 +40,15 @@
           <% end %>
 
           <div class="container-card-activite pt-5">
-            <div style="color: white"><%= activite.entreprise.nom %></div>
-              <%= link_to activite_path(activite) do %>
-                <div style="color: white"><%= activite.nom %></div>
-              <% end %>
-          </div>
+            <div><%= activite.entreprise.nom %></div>
+
+                <%= link_to activite_path(activite) do %>
+
+              <div class="btn btn-default"><%= activite.nom %></div>
+
+            <% end %>
+             </div>
+
 
         </div>
       <% end %>
